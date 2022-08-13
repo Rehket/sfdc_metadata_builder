@@ -9,7 +9,7 @@ def test_vfp_sfdc_classic():
     <content>myEditVFPage</content>
     <type>visualforce</type>
 </actionOverride>        
-    """
+    """.strip()
 
     assert (
         action_overrides.ActionOverride(
@@ -31,7 +31,7 @@ def test_lightning_override():
     <formFactor>Large</formFactor>
     <type>lightningcompenent</type>
 </actionOverride>
-    """
+    """.strip()
 
     assert (
         action_overrides.ActionOverride(
@@ -53,7 +53,7 @@ def test_lighting_mobile():
     <formFactor>Small</formFactor>
     <type>lightningcomponent</type>
 </actionOverride>
-    """
+    """.strip()
     assert (
         action_overrides.ActionOverride(
             action_name="edit",
@@ -71,7 +71,7 @@ def test_managed_package_override():
     <actionName>edit</actionName>
     <type>default</type>
 </actionOverride>
-    """
+    """.strip()
     assert (
         action_overrides.ActionOverride(action_name="edit", type="default").render()
         == expected_output
@@ -86,7 +86,7 @@ def test_lightning_page_action_override():
     <formFactor>Large</formFactor>
     <type>flexipage</type>
 </actionOverride>
-    """
+    """.strip()
     assert (
         action_overrides.ActionOverride(
             action_name="view",

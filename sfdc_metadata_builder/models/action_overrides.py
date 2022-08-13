@@ -15,15 +15,27 @@ class ActionName(str, Enum):
 
 
 class FormFactor(str, Enum):
-    pass
+    large = "Large"
+    medium = "medium"
+    small = "small"
 
 
 class ActionOverrideType(str, Enum):
-    pass
+    default = "default"
+    flexipage = "flexipage"
+    lightningcompontent = "lightningcomponent"
+    scontrol = "scontrol"
+    standard = "standard"
+    visualforce = "visualforce"
 
 
 class ActionOverride(BaseModel):
-    action_name: ActionName = Field(..., alias="actionOverride")
+    action_name: ActionName = Field(..., alias="actionName")
+    form_factor: FormFactor = Field(..., alias="formFactor")
+    type: ActionOverrideType = Field("default")
+    skip_recordtype_select: bool = None
+    comment: str = None
+    content: str = None
 
     def render(self):
         return env.get_template("actionOverride.xml.jinja2").render(
@@ -31,5 +43,5 @@ class ActionOverride(BaseModel):
         )
 
     class Config:
-        allow_population_by_field_name: True
-        use_enum_values: True
+        allow_population_by_field_name = True
+        use_enum_values = True
