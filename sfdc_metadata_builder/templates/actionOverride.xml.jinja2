@@ -1,10 +1,10 @@
 <actionOverride>
     <actionName>{{ action_name }}</actionName>
-    {% if content is defined and content !='' and content != 'null' %}
-    <content>{{ content }}</content>
-    {% endif %}
     {% if comment is defined and comment !='' and comment != 'null' %}
     <comment>{{ comment }}</comment>
+    {% endif %}
+    {% if content is defined and content !='' and content != 'null' %}
+    <content>{{ content }}</content>
     {% endif %}
     {% if form_factor is defined and form_factor !='' and form_factor != 'null' %}
     <formFactor>{{ form_factor }}</formFactor>

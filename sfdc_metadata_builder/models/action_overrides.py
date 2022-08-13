@@ -16,8 +16,9 @@ class ActionName(str, Enum):
 
 class FormFactor(str, Enum):
     large = "Large"
-    medium = "medium"
-    small = "small"
+    medium = "Medium"
+    small = "Small"
+    null = "null"
 
 
 class ActionOverrideType(str, Enum):
@@ -31,7 +32,7 @@ class ActionOverrideType(str, Enum):
 
 class ActionOverride(BaseModel):
     action_name: ActionName = Field(..., alias="actionName")
-    form_factor: FormFactor = Field(..., alias="formFactor")
+    form_factor: FormFactor = Field("null", alias="formFactor")
     type: ActionOverrideType = Field("default")
     skip_recordtype_select: bool = None
     comment: str = None

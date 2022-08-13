@@ -29,7 +29,7 @@ def test_lightning_override():
     <comment>This edit action is a lot safer.</comment>
     <content>myEditLightningComponent</content>
     <formFactor>Large</formFactor>
-    <type>lightningcompenent</type>
+    <type>lightningcomponent</type>
 </actionOverride>
     """.strip()
 
@@ -49,7 +49,7 @@ def test_lighting_mobile():
     expected_output = """
 <actionOverride>
     <actionName>edit</actionName>
-    <content>myEditLightingComponent</content>
+    <content>myEditLightningComponent</content>
     <formFactor>Small</formFactor>
     <type>lightningcomponent</type>
 </actionOverride>
@@ -60,7 +60,7 @@ def test_lighting_mobile():
             type="lightningcomponent",
             content="myEditLightningComponent",
             form_factor="Small",
-        )
+        ).render()
         == expected_output
     )
 
