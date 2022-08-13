@@ -1,6 +1,5 @@
 <actionOverrides>
     <actionName>{{ action_name }}</actionName>
-    <type>{{ type }}</type>
     {% if content is defined and content !='' and content != 'null' %}
     <content>{{ content }}</content>
     {% endif %}
@@ -9,5 +8,9 @@
     {% endif %}
     {% if form_factor is defined and form_factor !='' and form_factor != 'null' %}
     <formFactor>{{ form_factor }}</formFactor>
+    {% endif %}
+    <type>{{ type }}</type>
+    {% if skip_recordtype_select is defined and skip_recordtype_select !='' and skip_recordtype_select != 'null' %}
+    <skipRecordTypeSelect> {{ skip_recordtype_select }}</skipRecordTypeSelect>
     {% endif %}
  </actionOverrides>

@@ -5,9 +5,9 @@ def test_vfp_sfdc_classic():
     expected_output = """
 <actionOverride>
     <actionName>edit</actionName>
-    <type>visualforce</type>
-    <content>myEditVFPage</content>
     <comment>This edit action is a lot safer.</comment>
+    <content>myEditVFPage</content>
+    <type>visualforce</type>
 </actionOverride>        
     """
 
@@ -26,10 +26,10 @@ def test_lightning_override():
     expected_output = """
 <actionOverride>
     <actionName>edit</actionName>
-    <type>lightningcompenent</type>
+    <comment>This edit action is a lot safer.</comment>
     <content>myEditLightningComponent</content>
     <formFactor>Large</formFactor>
-    <comment>This edit action is a lot safer.</comment>
+    <type>lightningcompenent</type>
 </actionOverride>
     """
 
@@ -49,9 +49,9 @@ def test_lighting_mobile():
     expected_output = """
 <actionOverride>
     <actionName>edit</actionName>
-    <type>lightningcomponent</type>
     <content>myEditLightingComponent</content>
     <formFactor>Small</formFactor>
+    <type>lightningcomponent</type>
 </actionOverride>
     """
     assert (
