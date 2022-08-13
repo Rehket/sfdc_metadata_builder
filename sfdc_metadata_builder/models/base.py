@@ -2,7 +2,7 @@ from pydantic import BaseModel, Field
 from jinja2 import Environment, PackageLoader, select_autoescape
 
 env = Environment(
-    loader=PackageLoader("metadata_builder"),
+    loader=PackageLoader("sfdc_metadata_builder"),
     autoescape=select_autoescape(),
     lstrip_blocks=True,
     trim_blocks=True,
@@ -12,7 +12,6 @@ env = Environment(
 class Metadata(BaseModel):
     fullname: str = Field(..., alias="fullName")
     api_version: str = "55.0"
-
 
 
 class MetadataWithContent(Metadata):
