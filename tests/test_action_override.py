@@ -12,12 +12,12 @@ def test_vfp_sfdc_classic():
     """
 
     assert (
-        action_overrides.ActionOverride().render(
+        action_overrides.ActionOverride(
             action_name="edit",
             type="visualforce",
             content="myEditVFPage",
             comment="This edit action is a lot safer.",
-        )
+        ).render()
         == expected_output
     )
 
@@ -43,3 +43,25 @@ def test_lightning_override():
         ).render()
         == expected_output
     )
+
+
+def test_lighting_mobile():
+    expected_output = """
+<actionOverride>
+    <actionName>edit</actionName>
+    <type>lightningcomponent</type>
+    <content>myEditLightingComponent</content>
+    <formFactor>Small</formFactor>
+</actionOverride>
+    """
+    assert (
+        action_overrides.ActionOverride(
+            action_name="edit",
+            type="lightningcomponent",
+            content="myEditLightningComponent",
+            form_factor="Small",
+        )
+        == expected_output
+    )
+
+
