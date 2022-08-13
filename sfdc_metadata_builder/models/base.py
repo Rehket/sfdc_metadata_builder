@@ -11,7 +11,8 @@ env = Environment(
 
 class Metadata(BaseModel):
     fullname: str = Field(..., alias="fullName")
-    api_version: str
+    api_version: str = "55.0"
+
 
 
 class MetadataWithContent(Metadata):
