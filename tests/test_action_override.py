@@ -78,3 +78,21 @@ def test_managed_package_override():
     )
 
 
+def test_lightning_page_action_override():
+    expected_output = """
+<actionOverride>
+    <actionName>view</actionName>
+    <content>myLightningPage</content>
+    <formFactor>Large</formFactor>
+    <type>flexipage</type>
+</actionOverride>
+    """
+    assert (
+        action_overrides.ActionOverride(
+            action_name="view",
+            content="myLightningPage",
+            form_factor="Large",
+            type="flexipage",
+        ).render()
+        == expected_output
+    )
