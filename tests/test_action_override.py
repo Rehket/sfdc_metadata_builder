@@ -65,3 +65,16 @@ def test_lighting_mobile():
     )
 
 
+def test_managed_package_override():
+    expected_output = """
+<actionOverride>
+    <actionName>edit</actionName>
+    <type>default</type>
+</actionOverride>
+    """
+    assert (
+        action_overrides.ActionOverride(action_name="edit", type="default").render()
+        == expected_output
+    )
+
+
